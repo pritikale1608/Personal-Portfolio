@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Protfolio Website</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -33,27 +34,97 @@
         <div class="container">
             <div class="row">
                 <div class="about-col-1">
-                    <img src="img/priti.jpeg" >
+                    <img src="img/priti.jpeg">
                 </div>
- <div class="about-col-1">
-    <h1 class="sub-title">About Me</h1>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-         Accusamus accusantium eius vitae iusto harum 
-        necessitatibus consectetur autem beatae quisquam aliquam!</p>
-        <div class="tab-title">
-            <p class="tab-link active-link">skills</p>
-            <p class="tab-link">Exprience</p>
-            <p class="tab-link">Education</p>
+                <div class="about-col-1">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                        Accusamus accusantium eius vitae iusto harum
+                        necessitatibus consectetur autem beatae quisquam aliquam!</p>
+                    <div class="tab-title">
+                        <p class="tab-link active-link " onclick="opentab('skills')">skills</p>
+                        <p class="tab-link" onclick="opentab('exprience')">Exprience</p>
+                        <p class="tab-link" onclick="opentab('education')">Education</p>
 
-        </div>
- </div>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI/UX</span><br>Dedigning Web/App interfaces</li>
+                            <li><span>Web Development</span><br>Web app Development</li>
+                            <li><span>Full stack </span><br>Web development</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="exprience">
+                        <ul>
+                            <li><span>2021 - Current</span><br>Dedigning Web/App interfaces</li>
+                            <li><span>2019-2021</span><br>complete mca</li>
+                            <li><span>2016 - 2017 </span><br>Intership Web development</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2019</span><br>hsc</li>
+                            <li><span>2022</span><br>bsc</li>
+                            <li><span>2024</span><br>mca</li>
+                        </ul>
+                    </div>
+                </div>
 
             </div>
 
         </div>
     </div>
 
+    <!-- Service -->
+     <div id="services">
+        <div class="container">
+             <h1 class="sub-title">My Service</h1>
+             <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Web Design</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore explicabo voluptate
+                         labore cupiditate sunt tenetur fugiat 
+                        adipisci vero repellat illo modi enim nobis c
+                        ulpa, quasi consequatur sequi qui praesentium nam?</p>
+                        <a href="#">Leran more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-crop-simple"></i>
+                    <h2>full stack Design</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore explicabo voluptate
+                         labore cupiditate sunt tenetur fugiat 
+                        adipisci vero repellat illo modi enim nobis c
+                        ulpa, quasi consequatur sequi qui praesentium nam?</p>
+                        <a href="#">Leran more</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-app-store-ios"></i>
+                    <h2> database Design</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore explicabo voluptate
+                         labore cupiditate sunt tenetur fugiat 
+                        adipisci vero repellat illo modi enim nobis c
+                        ulpa, quasi consequatur sequi qui praesentium nam?</p>
+                        <a href="#">Leran more</a>
+                </div>
+             </div>
+        </div>
+     </div>
 
+<script>
+    var tablinks=document.getElementsByClassName('tab-link');
+    var tabcontents=document.getElementsByClassName('tab-contents');
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+         for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab")
+    }
+</script>
 </body>
 
 
